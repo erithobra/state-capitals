@@ -17,19 +17,22 @@ print("follow the prompts below...")
 correct = 0
 incorrect = 0
 
-print(states[0]["name"])
+for state in states:
 
-user_input = input("What is the capital of " + states[0]["name"] + "? ")
+    print(states[states.index(state)]["name"])
 
-if user_input == states[0]["capital"]:
-    correct = correct + 1
-    print("here")
-else:
-    incorrect = incorrect + 1
-    print("no, here")
+    user_input = input("What is the capital of " + states[states.index(state)]["name"] + "? ")
 
-print("Correct: {}".format(correct))
-print("Incorrect: {}".format(incorrect))
+    if user_input == states[states.index(state)]["capital"]:
+        correct = correct + 1
+        print("here")
+    else:
+        incorrect = incorrect + 1
+        print("no, here")
+
+    print("Correct: {}".format(correct))
+    print("Incorrect: {}".format(incorrect))
 
 
-print(states)
+print("Game Over!")
+print("Your final score was {}".format(correct) + " correct, and {}".format(incorrect) + " incorrect!")
